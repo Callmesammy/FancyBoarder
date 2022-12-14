@@ -6,7 +6,7 @@ import java.awt.Graphics2D;
 import java.awt.RenderingHints;
 import javax.swing.JComponent;
 import swings.FancyBorderRadius;
-
+ty
 
 public class panel extends JComponent{
 
@@ -21,7 +21,7 @@ public class panel extends JComponent{
         g2.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BILINEAR);
         int width = getWidth();
 //        int height = getHeight();
-//        FancyBorderRadius radius = new FancyBorderRadius(width, height, border);
+//mn        FancyBorderRadius radius = new FancyBorderRadius(width, height, border);
         g2.dispose();
         super.paintComponent(g); 
     }
