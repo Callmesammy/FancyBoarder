@@ -6,7 +6,7 @@ import java.awt.Graphics2D;
 import java.awt.RenderingHints;
 import javax.swing.JComponent;
 import swings.FancyBorderRadius;
-ty
+tyhjg
 
 public class panel extends JComponent{
 
