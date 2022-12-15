@@ -33,7 +33,7 @@ public class panel extends JComponent{
         FancyBorderRadius border = new FancyBorderRadius(width, height, boarderString);
         g2.fill(border.getShape());
         g2.dispose();
-        super.paintComponent(g);ug
+        super.paintComponent(g);
     }t
     
     
