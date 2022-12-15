@@ -24,8 +24,8 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="187" max="-2" attributes="0"/>
-              <Component id="panel1" min="-2" pref="244" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="211" max="-2" attributes="0"/>
+              <Component id="panel1" min="-2" pref="220" max="-2" attributes="0"/>
               <EmptySpace pref="321" max="32767" attributes="0"/>
           </Group>
       </Group>
@@ -33,8 +33,8 @@
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
-              <Component id="panel1" min="-2" pref="221" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="83" max="-2" attributes="0"/>
+              <Component id="panel1" min="-2" pref="202" max="-2" attributes="0"/>
               <EmptySpace pref="85" max="32767" attributes="0"/>
           </Group>
       </Group>
