@@ -34,7 +34,7 @@ public class panel extends JComponent{
         g2.fill(border.getShape());
         g2.dispose();
         super.paintComponent(g);ug
-    }
+    }t
     
     
     
