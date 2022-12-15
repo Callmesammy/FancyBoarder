@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package swings;
 
 import java.awt.Color;
@@ -34,7 +31,7 @@ public class panel extends JComponent{
         g2.fill(border.getShape());
         g2.dispose();
         super.paintComponent(g);
-    }tt
+    }
     
     
     
