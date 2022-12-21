@@ -21,7 +21,7 @@ public class pandel extends JComponent{
     private Icon icon;
     private BufferedImage buff;
     
-    ghjdfdfgdf
+    ghjdfdfgdfsdsdffd
     public pandel() {
         setOpaque(false);
         //very important
