@@ -7,6 +7,7 @@ import java.awt.Graphics2D;
 import java.awt.RenderingHints;
 import java.awt.image.BufferedImage;
 import javax.swing.Icon;
+import javax.swing.ImageIcon;
 import javax.swing.JComponent;
 import swings.FancyBorderRadius;
 
@@ -21,14 +22,22 @@ public class pandel extends JComponent{
     private Icon icon;
     private BufferedImage buff;
     
-    ghjdfdfgdfsdsdffd
+    
     public pandel() {
         setOpaque(false);
         //very important
+        icon = new ImageIcon(getClass().getResource("/image/pack/picture.jpg"));
         
     }
     
 private void createimage (){
+    if (icon != null) {
+        int width = getWidth();
+        int height = getHeight();
+        buff = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
+        Graphics2D g2 = buff.createGraphics();
+        g2.dispose();
+    }
         
 }
 //next i save this on my github :)))))
