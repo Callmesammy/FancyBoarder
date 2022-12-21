@@ -2,8 +2,12 @@
 package fancy_boarder;
 
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.Image;
+import java.awt.Point;
+import java.awt.Rectangle;
 import java.awt.RenderingHints;
 import java.awt.image.BufferedImage;
 import javax.swing.Icon;
@@ -40,6 +44,32 @@ private void createimage (){
     }
         
 }
+
+private Rectangle getAutoSize(Icon image) {
+        int w = getWidth();
+        int h = getHeight();
+        int iw = image.getIconWidth();
+        int ih = image.getIconHeight();
+        double xScale = (double) w / iw;
+        double yScale = (double) h / ih;
+        double scale = Math.max(xScale, yScale);
+        int width = (int) (scale * iw);
+        int height = (int) (scale * ih);
+        if (width < 1) {
+            width = 1;
+        }
+        if (height < 1) {
+            height = 1;
+        }
+        int x = (w - width) / 2;
+        int y = (h - height) / 2;
+        return new Rectangle(new Point(x, y), new Dimension(width, height));
+    }
+
+    private Image toImage(Icon icon) {
+        return ((ImageIcon) icon).getImage();
+    }
+
 //next i save this on my github :)))))
     //Bye from Sammy ))
     @Override
