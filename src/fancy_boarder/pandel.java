@@ -42,6 +42,7 @@ private void CreateImage (){
             Graphics2D g2 = buffered.createGraphics();
             Rectangle rec = getAutoSize(image);
             g2.drawImage(((ImageIcon)image).getImage(), rec.x,rec.y,rec.width,rec.height, null);
+           
             g2.dispose();
             
         }
