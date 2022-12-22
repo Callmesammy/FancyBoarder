@@ -31,7 +31,7 @@ public class Panel extends  JComponent{
         FancyBorderRadius fan = new FancyBorderRadius(width, height, str);
         
         g2.setColor(new Color(150,112,170));
-        g2.fill(fan.getShape());
+        g2.fill(fan.getShape( ));
         g2.dispose();
         
         super.paintComponent(g); 
