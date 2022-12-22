@@ -23,26 +23,29 @@ import swings.FancyBorderRadius;
 // no need ;)
 public class pandel extends JComponent{
 
-    private Icon icon;
-    private BufferedImage buff;
-    
+    private  BufferedImage buffered;
+    private Icon image; 
     
     public pandel() {
         setOpaque(false);
         //very important
-        icon = new ImageIcon(getClass().getResource("/image/pack/picture.jpg"));
+    image = new ImageIcon(getClass().getResource("/image/pack/picture.jpg"));
+  
+}
+    
+private void CreateImage (){
+    if (image != null) {
+        int width = getWidth();
+        int height = getHeight();
+        if (width> 0 && height >0) {
+            buffered  = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
+            Graphics2D g2 = buffered.createGraphics();
+            g2.dispose();
+            
+        }
         
     }
     
-private void createimage (){
-    if (icon != null) {
-        int width = getWidth();
-        int height = getHeight();
-        buff = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
-        Graphics2D g2 = buff.createGraphics();
-        g2.dispose();
-    }
-        
 }
 
 private Rectangle getAutoSize(Icon image) {
