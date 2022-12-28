@@ -17,6 +17,8 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JComponent;
 import org.jdesktop.animation.timing.Animator;
+import org.jdesktop.animation.timing.TimingTarget;
+import org.jdesktop.animation.timing.TimingTargetAdapter;
 
 /**
  *
@@ -33,6 +35,22 @@ public class panel extends JComponent{
             // Bye for now :))
     public panel() {
         image = new ImageIcon(getClass().getResource("/image/pack/picture.jpg"));
+        init();
+    }
+    
+    private void init(){
+        TimingTarget target = new TimingTargetAdapter(){
+            @Override
+            public void timingEvent(float fraction) {
+                minate = fraction;
+                repaint();
+            }
+        
+        };
+        animate = new Animator(1000, target);
+        animate.setResolution(0);
+        animate.setAcceleration(0.55f);
+        animate.setDeceleration(0.5f);
     }
 
     @Override
