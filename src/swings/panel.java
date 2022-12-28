@@ -1,7 +1,10 @@
-
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 package swings;
 
-import java.awt.Color;
+import java.awt.AlphaComposite;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -13,37 +16,50 @@ import java.awt.image.BufferedImage;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JComponent;
+import org.jdesktop.animation.timing.Animator;
 
+/**
+ *
+ * @author HP
+ */
 
-public class panel extends JComponent {
+// no comments for now :)
+public class panel extends JComponent{
 
-    private Icon image; 
+    private Icon image;
+    private float minate;
+    private Animator animate;
     
+            // Bye for now :))
     public panel() {
         image = new ImageIcon(getClass().getResource("/image/pack/picture.jpg"));
     }
 
     @Override
     protected void paintComponent(Graphics g) {
-    int width = getWidth();
-    int height = getHeight();
-    int x = 0;
-    int y = 0;
-    String boarderbd = "48% 52% 56% 44% / 52% 49% 51% 48%";
     
-    BufferedImage img = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
-    Graphics2D g2 = img.createGraphics();
-    g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-//    g2.setColor(new Color(60, 49, 224));
-    FancyBorderRadius rad = new FancyBorderRadius(width, height, boarderbd);
-    g2.fill(rad.getShape());
+        int width = getWidth();
+        int height = getHeight();
+        int x =0;
+        int y =0;
+        
+        String boarderShape = "48% 52% 56% 44% / 52% 43% 57% 48% ";
+        FancyBorderRadius fan = new FancyBorderRadius(width, height, boarderShape);
+        BufferedImage img = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
+        Graphics2D g2 = img.createGraphics();
+        g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+        
+        g2.fill(fan.getShape());
         if (image != null) {
-            Rectangle tan = getAutoSize(image);
-            g2.drawImage(toImage(image), tan.x, tan.y, tan.width, tan.height, null);
+            g2.setComposite(AlphaComposite.SrcIn);
+            Rectangle rec = getAutoSize(image);
+            g2.drawImage(toImage(image), rec.x, rec.y, rec.width, rec.height, null);
+            
         }
-    g2.dispose();
-    g.drawImage(img, 0, 0, null);
-        super.paintComponent(g);
+        g2.dispose();
+        g.drawImage(img, 0,0,null);
+        super.paintComponent(g); 
+    
     }
     
      private Rectangle getAutoSize(Icon image) {
@@ -70,4 +86,5 @@ public class panel extends JComponent {
     private Image toImage(Icon icon) {
         return ((ImageIcon) icon).getImage();
     }
+    
 }
