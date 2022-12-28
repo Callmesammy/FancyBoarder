@@ -31,6 +31,7 @@ public class panel extends JComponent{
     private Icon image;
     private float minate;
     private Animator animate;
+    private FancyAnimation fancy;
     
             // Bye for now :))
     public panel() {
@@ -39,6 +40,9 @@ public class panel extends JComponent{
     }
     
     private void init(){
+        String start = "40% 60% 60% 40% / 60% 30% 70% 40%";
+        String end = "40% 60%";
+        fancy = new FancyAnimation(start, end);
         TimingTarget target = new TimingTargetAdapter(){
             @Override
             public void timingEvent(float fraction) {
@@ -51,6 +55,8 @@ public class panel extends JComponent{
         animate.setResolution(0);
         animate.setAcceleration(0.55f);
         animate.setDeceleration(0.5f);
+        animate.setRepeatCount(-1);
+        animate.setRepeatBehavior(Animator.RepeatBehavior.REVERSE);
     }
 
     @Override
