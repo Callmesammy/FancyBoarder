@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package swings;
 
 import java.awt.AlphaComposite;
@@ -31,6 +27,8 @@ public class panel extends JComponent{
     private Icon image;
     private float minate;
     private Animator animate;
+    private Animator amitor;
+    private float mitor;
     private FancyAnimation fancy;
     
             // Bye for now :))
@@ -53,10 +51,14 @@ public class panel extends JComponent{
         };
         animate = new Animator(1000, target);
         animate.setResolution(0);
-        animate.setAcceleration(0.55f);
-        animate.setDeceleration(0.5f);
+// mate.setDecelera       animate.setAcceleration(0.55f);
+//        anition(0.5f);
         animate.setRepeatCount(-1);
         animate.setRepeatBehavior(Animator.RepeatBehavior.REVERSE);
+        animate.start();
+        
+        amitor = new Animator(10000, target);
+        
     }
 
     @Override
@@ -66,9 +68,7 @@ public class panel extends JComponent{
         int height = getHeight();
         int x =0;
         int y =0;
-        
-        String boarderShape = "48% 52% 56% 44% / 52% 43% 57% 48% ";
-        FancyBorderRadius fan = new FancyBorderRadius(width, height, boarderShape);
+        FancyBorderRadius fan = new FancyBorderRadius(width, height, fancy.getAnimate(minate));
         BufferedImage img = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
         Graphics2D g2 = img.createGraphics();
         g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
