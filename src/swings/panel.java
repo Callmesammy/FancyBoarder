@@ -8,7 +8,9 @@ import java.awt.Image;
 import java.awt.Point;
 import java.awt.Rectangle;
 import java.awt.RenderingHints;
+import java.awt.geom.AffineTransform;
 import java.awt.image.BufferedImage;
+import static java.util.Collections.rotate;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JComponent;
@@ -49,16 +51,33 @@ public class panel extends JComponent{
             }
         
         };
-        animate = new Animator(1000, target);
+        animate = new Animator(5000, target);
         animate.setResolution(0);
 // mate.setDecelera       animate.setAcceleration(0.55f);
 //        anition(0.5f);
         animate.setRepeatCount(-1);
         animate.setRepeatBehavior(Animator.RepeatBehavior.REVERSE);
         animate.start();
+    
         
-        amitor = new Animator(10000, target);
+          TimingTarget targt = new TimingTargetAdapter(){
+            @Override
+            public void timingEvent(float fraction) {
+                mitor = fraction;
+                repaint();
+            }
         
+        };
+        amitor = new Animator(10000, targt);
+        amitor.setResolution(0);
+// mate.setDecelera       animate.setAcceleration(0.55f);
+//        anition(0.5f);
+        amitor.setRepeatCount(-1);
+        amitor.setRepeatBehavior(Animator.RepeatBehavior.REVERSE);
+        amitor.start();
+        
+        
+       
     }
 
     @Override
@@ -72,9 +91,12 @@ public class panel extends JComponent{
         BufferedImage img = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
         Graphics2D g2 = img.createGraphics();
         g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+        AffineTransform tr = g2.getTransform();
+        g2.rotate(Math.toRadians(360*mitor), width/2, height/2); 
         
         g2.fill(fan.getShape());
         if (image != null) {
+            
             g2.setComposite(AlphaComposite.SrcIn);
             Rectangle rec = getAutoSize(image);
             g2.drawImage(toImage(image), rec.x, rec.y, rec.width, rec.height, null);
