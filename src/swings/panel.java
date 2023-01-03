@@ -42,7 +42,7 @@ public class panel extends JComponent{
     
     private Animator animate;
     private float minate;
-    ccv
+   
     // next we create a 360 degree rotaton on the image :)
     
     private Animator minator;
